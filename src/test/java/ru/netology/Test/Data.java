@@ -28,7 +28,7 @@ public class Data {
         return faker.name().fullName();
     }
 
-    public static String getPhone() {
+    public static String getPhone(String Locale) {
         return faker.phoneNumber().phoneNumber();
     }
 }

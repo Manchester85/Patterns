@@ -18,7 +18,7 @@ public class Test {
         $("[data-test-id=city] .input__control").setValue(Data.getCity());
         $("[data-test-id=date] [placeholder='Дата встречи']").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE, when(false));
         $("[data-test-id=name] [name=name]").setValue(Data.getName());
-        $("[data-test-id=phone] input").setValue(Data.getPhone());
+        $("[data-test-id=phone] input").setValue(Data.getPhone("ru"));
         $("[data-test-id=agreement]>.checkbox__box").click();
         $(".grid-col .button__text").click();
         $("div.notification__content").shouldBe(visible, exactText("Встреча успешно запланирована на " + Data.when(false)));
