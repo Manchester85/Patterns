@@ -1,14 +1,8 @@
 package ru.netology.Test;
-import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
-import org.openqa.selenium.Keys;
-
 import java.time.Duration;
-
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 import static org.openqa.selenium.Keys.BACK_SPACE;
 import static ru.netology.Test.Data.when;
@@ -33,7 +27,7 @@ public class Test {
         $("[data-test-id=date] [placeholder='Дата встречи']").doubleClick().sendKeys(BACK_SPACE);
         $("[data-test-id=date] [placeholder='Дата встречи']").setValue(when(true));
         $(".grid-col .button__text").click();
-        $(".notification__content").shouldBe(visible, Duration.ofSeconds(15)).shouldHave(text( "Встреча успешно запланирована на " + when(true)));
+        $(".notification__content").shouldBe(visible, Duration.ofSeconds(15)).shouldHave(text( "Встреча успешно забронирована на " + when(true)));
     }
 }
 
